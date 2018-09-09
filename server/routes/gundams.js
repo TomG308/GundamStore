@@ -31,10 +31,10 @@ gundamRouter.get('/:id', (req, res) => {
             return res.status(200).send(editedGundam)
         }
     )
-}).delete(':/id', (req, res) = {
+}).delete('/:id', (req,res) => {
     Gundam.findByIdAndRemove(req.params.id, (err, deletedGundam) => {
-        if(err) return status(500).send(err)
-        return status(200).send(deletedGundam)
+        if (err) return res.status(500).send(err)
+        return res.status(500).send(deletedGundam)
     })
 })
 
