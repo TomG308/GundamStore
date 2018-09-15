@@ -7,6 +7,10 @@ const morgan = require('morgan');
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 
+app.use((req, res, next) => {
+    console.log(`${new Date().toString()} => ${req.originalUrl}`)
+    next()
+})
 
 mongoose.connect('mongodb://localhost/gundamstore' ,{ useNewUrlParser: true }, (err) => {
     if (err) throw err
