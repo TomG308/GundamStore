@@ -21,7 +21,7 @@ gundamRouter.get('/:id', (req, res) => {
         if (err) return res.status(500).send(err)
         return res.status(201).send(newGundam)
     })
-}).put('/', (req, res) => {
+}).put('/:id', (req, res) => {
     Gundam.findByIdAndUpdate(
         req.params.id,
         body,

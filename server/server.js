@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     next()
 })
 
-mongoose.connect('mongodb://localhost/gundamstore' ,{ useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb://localhost:27017/gundamStore' ,{ useNewUrlParser: true }, (err) => {
     if (err) throw err
     console.log('connected to the database')
 })
